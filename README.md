@@ -89,7 +89,7 @@ sim_seconds                                  0.000043                       # Nu
 
 We observe that MinorCPU has a significantly less execution time.
 
-#### b. 
+#### b)
 
 Now we change the frequency of the simulation decreasing it to 500MHz using the commands:
 
