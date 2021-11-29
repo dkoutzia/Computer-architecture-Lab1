@@ -79,21 +79,52 @@ This model is based on the Arm architecture and we call it HPI. The HPI CPU timi
 First,we simulate our program without changing any parameters:
 
 > * ./build/ARM/gem5.opt -d program_result_minor configs/example/se.py --cpu-type=MinorCPU --caches -c program_arm
-***MinorCPU:***
-sim_seconds                                  0.000036                       # Number of seconds simulated
 
-from folder **stats_minor*.
+***MinorCPU:***
+sim_seconds                                  0.000036          &nbsp;             # Number of seconds simulated
+from folder **stats_minor**.
 
 > * ./build/ARM/gem5.opt -d program_result_timingsimple configs/example/se.py --cpu type=TimingSimpleCPU --caches -c program_arm
 
 ***TimingSimpleCPU:***
-sim_seconds                                  0.000043                       # Number of seconds simulated
-
-from folder **stats_timingsimple
+sim_seconds                                  0.000043                &nbsp;       # Number of seconds simulated
+from folder **stats_timingsimple**
 
 We observe that MinorCPU has a significantly less execution time.
 
 #### b)
 
-Now we change the frequency of the simulation decreasing it to 500MHz using the commands:
+> * ./build/ARM/gem5.opt -d program_result_minor_500 configs/example/se.py --cpu-type=MinorCPU --sys-clock=500000000 --caches -c program_arm
+
+***MinorCPU:***
+sim_seconds                                  0.000043            &nbsp;           # Number of seconds simulated
+from folder **stats_minor_500**
+
+> * ./build/ARM/gem5.opt -d program_result_timingsimple_500 configs/example/se.py --cpu-type=TimingSimpleCPU --sys-clock=500000000 --caches -c program_arm
+
+
+***TimingSimpleCPU:***
+sim_seconds                                  0.000049              &nbsp;         # Number of seconds simulated
+from folder **timingsimple**
+
+Our observation is that execution time increased in both CPUs, something we anticipated since we decreased the frequency.
+
+<br>
+
+Finally we will change our memory's technology to **DDR3_2133_8x8** using the command:
+
+> * ./build/ARM/gem5.opt -d program_result_minor_DDR3 configs/example/se.py --cpu-type=MinorCPU --mem-type=DDR3_2133_8x8 --caches -c program_arm
+
+***MinorCPU:***
+sim_seconds                                  0.000035             &nbsp;       # Number of seconds simulated
+from folder **minor**
+
+> * ./build/ARM/gem5.opt -d program_result_timingsimple_DDR3 configs/example/se.py --cpu-type=TimingSimpleCPU --mem-type=DDR3_2133_8x8 --caches -c program_arm
+
+
+***TimingSimpleCPU:***
+sim_seconds                                  0.000042             &nbsp;          # Number of seconds simulated
+from folder **timingsimple**
+
+We are reaching to the conclusion that our time decreased in both cases. That was expected since we originally used DDR3_1600_8x8 (1.6 x 8 x 8 / 8 = 12.8GBps) and then we used DDR3_2133_8x8 (2.133 x 8 x 8 / 8 = 17.0 GBps). We observe that time decrease is almost insignificant, but that could be justified by the simplicity of our C program.
 
