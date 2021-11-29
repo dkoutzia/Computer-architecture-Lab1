@@ -134,3 +134,4 @@ We are reaching to the conclusion that our time decreased in both cases. That wa
 https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU
 https://www.gem5.org/documentation/general_docs/cpu_models/minor_cpu
 http://learning.gem5.org/book/part1/example_configs.html
+http://learning.gem5.org/book/part1/gem5_stats.html
