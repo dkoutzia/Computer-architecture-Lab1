@@ -1,7 +1,5 @@
-# Computer-architecture-Lab1
-# computer-architecture101
 # Computer Architecture Lab1
-## Dimitrios Koutziampasis
+## Dimitrios Koutziampasis, Electrical and computer engineering,AUTH
 
 ### **Question 1.**
 *CPU type*: atomic,minor,hpi
