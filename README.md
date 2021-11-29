@@ -82,10 +82,14 @@ First,we simulate our program without changing any parameters:
 ***MinorCPU:***
 sim_seconds                                  0.000036                       # Number of seconds simulated
 
+from folder **stats_minor*.
+
 > * ./build/ARM/gem5.opt -d program_result_timingsimple configs/example/se.py --cpu type=TimingSimpleCPU --caches -c program_arm
 
 ***TimingSimpleCPU:***
 sim_seconds                                  0.000043                       # Number of seconds simulated
+
+from folder **stats_timingsimple
 
 We observe that MinorCPU has a significantly less execution time.
 
