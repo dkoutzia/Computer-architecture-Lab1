@@ -10,7 +10,7 @@
 
 *CPU voltage*:1,2V
 
-*cache*:fixed line sized 64 bytes, private L1 caches and a shared L2 cache (using minorCPU) 
+*cache*: fixed line sized 64 bytes, private L1 caches and a shared L2 cache (using minorCPU) 
 
 *CPU frequency*: 4 GHz (default)
 
@@ -128,3 +128,9 @@ from folder **timingsimple**
 
 We are reaching to the conclusion that our time decreased in both cases. That was expected since we originally used DDR3_1600_8x8 (1.6 x 8 x 8 / 8 = 12.8GBps) and then we used DDR3_2133_8x8 (2.133 x 8 x 8 / 8 = 17.0 GBps). We observe that time decrease is almost insignificant, but that could be justified by the simplicity of our C program.
 
+
+### Bibliography
+
+https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU
+https://www.gem5.org/documentation/general_docs/cpu_models/minor_cpu
+http://learning.gem5.org/book/part1/example_configs.html
